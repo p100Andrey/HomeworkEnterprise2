@@ -1,11 +1,10 @@
 package com.company;
 
-public interface Task<Integer> {
+public interface Task<N> {
 
     // Метода запускает таск на выполнение
     void execute();
 
     // Возвращает результат выполнения
-    Integer getResult();
-
+    Long getResult();
 }

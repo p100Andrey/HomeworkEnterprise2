@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.IdentityHashMap;
 import java.util.List;
 
 public class Main {
@@ -14,7 +16,7 @@ public class Main {
     }
 
     public static void test(List<Task<Integer>> intTasks) {
-        Executor<Number> numberExecutor = new MyExecutor();
+        Executor<Number> numberExecutor = new ExecutorImpl<>();
 
         for (Task<Integer> intTask : intTasks) {
             numberExecutor.addTask(intTask);

@@ -1,10 +1,10 @@
 package com.company;
 
-public class LongTask implements Task<Integer> {
-    private Integer result;
+public class LongTask<N extends Number> implements Task {
+    private Long result;
 
     public LongTask(long l) {
-        this.result = (int) l;
+        this.result = l;
     }
 
     @Override
@@ -13,7 +13,7 @@ public class LongTask implements Task<Integer> {
     }
 
     @Override
-    public Integer getResult() {
+    public Long getResult() {
         return result;
     }
 }

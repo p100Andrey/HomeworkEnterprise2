@@ -2,14 +2,13 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class MyExecutor implements Executor<Number>, Validator {
+public class ExecutorImpl<N extends Number> implements Executor<N> {
 
     List<Task> allTasks = new ArrayList<>();
     List<Number> validResults = new ArrayList<>();
     List<Number> invalidResults = new ArrayList<>();
-    Integer validator;
+    NumberValidator numberValidator;
 
     @Override
     public void addTask(Task task) {
@@ -17,18 +16,19 @@ public class MyExecutor implements Executor<Number>, Validator {
     }
 
     @Override
-    public void addTask(Task task, Validator validator) {
+    public void addTask(Task task, Validator<Number> validator) {
         allTasks.add(task);
-        this.validator = (Integer) task.getResult();
+        this.numberValidator = (NumberValidator) validator;
+        this.numberValidator.validator = task.getResult();
     }
 
     @Override
     public void execute() {
         for (Task task : allTasks) {
-            if (isValid(task)) {
-                validResults.add((Number) task.getResult());
+            if (numberValidator.isValid(task)) {
+                validResults.add(task.getResult());
             } else {
-                invalidResults.add((Number) task.getResult());
+                invalidResults.add(task.getResult());
             }
         }
     }
@@ -43,11 +43,4 @@ public class MyExecutor implements Executor<Number>, Validator {
         return invalidResults;
     }
 
-    @Override
-    public boolean isValid(Task result) {
-        if ((Integer) result.getResult() % validator == 0) {
-            return true;
-        }
-        return false;
-    }
 }

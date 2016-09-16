@@ -15,7 +15,7 @@ public interface Executor<N> {
     // Результат таска будет записан в InvalidResults если validator.isValid
     // вернет false для этого результата
     // Бросает Эксепшн если уже был вызван метод execute()
-    void addTask(Task task, Validator validator);
+    void addTask(Task task, Validator<Number> validator);
 
     // Выполнить все добавленые таски
     void execute();
