@@ -15,15 +15,15 @@ public interface Executor<N> {
     // Результат таска будет записан в InvalidResults если validator.isValid
     // вернет false для этого результата
     // Бросает Эксепшн если уже был вызван метод execute()
-    void addTask(Task task, Validator<Number> validator);
+    void addTask(Task task, Validator<Long> validator);
 
     // Выполнить все добавленые таски
     void execute();
 
     // Получить валидные результаты. Бросает Эксепшн если не был вызван метод execute()
 
-    List<Number> getValidResults();
+    List<Long> getValidResults();
 
     // Получить невалидные результаты. Бросает Эксепшн если не был вызван метод execute()
-    List<Number> getInvalidResults();
+    List<Long> getInvalidResults();
 }

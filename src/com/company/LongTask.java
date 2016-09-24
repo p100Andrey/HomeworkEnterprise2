@@ -1,7 +1,7 @@
 package com.company;
 
-public class LongTask<N extends Number> implements Task {
-    private Long result;
+public class LongTask<Long> implements Task {
+    private long result;
 
     public LongTask(long l) {
         this.result = l;
@@ -9,11 +9,11 @@ public class LongTask<N extends Number> implements Task {
 
     @Override
     public void execute() {
-
+        System.out.println(result);
     }
 
     @Override
-    public Long getResult() {
+    public long getResult() {
         return result;
     }
 }

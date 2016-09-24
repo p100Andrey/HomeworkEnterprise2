@@ -6,5 +6,5 @@ public interface Task<N> {
     void execute();
 
     // Возвращает результат выполнения
-    Long getResult();
+    long getResult();
 }

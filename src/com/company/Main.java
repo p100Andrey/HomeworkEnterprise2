@@ -12,6 +12,10 @@ public class Main {
         intTasks.add(new LongTask(15L));
         intTasks.add(new LongTask(20L));
         intTasks.add(new LongTask(25L));
+        System.out.println("All tasks:");
+        for (Task task : intTasks) {
+            task.execute();
+        }
         test(intTasks);
     }
 
