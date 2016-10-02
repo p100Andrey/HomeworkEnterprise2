@@ -1,4 +1,4 @@
-package com.company;
+package com.company.task;
 
 public interface Task<N> {
 
@@ -6,5 +6,5 @@ public interface Task<N> {
     void execute();
 
     // Возвращает результат выполнения
-    long getResult();
+    N getResult();
 }

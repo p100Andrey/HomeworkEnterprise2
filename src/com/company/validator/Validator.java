@@ -1,4 +1,4 @@
-package com.company;
+package com.company.validator;
 
 public interface Validator<N> {
 

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.task;
 
 import org.junit.Test;
 
@@ -9,18 +9,18 @@ public class LongTaskTest {
     @Test
     public void TestGetResult() throws Exception {
         Task longTask = new LongTask<>(15L);
-        assertEquals(15L, longTask.getResult());
+        assertEquals((Long) 15L, longTask.getResult());
     }
 
     @Test
     public void TestGetResultZero() throws Exception {
         Task longTask = new LongTask<>(0L);
-        assertEquals(0, longTask.getResult());
+        assertEquals((Long) 0L, longTask.getResult());
     }
 
     @Test
     public void TestGetResultNegative() throws Exception {
         Task longTask = new LongTask<>(-15L);
-        assertEquals(-15, longTask.getResult());
+        assertEquals((Long) (-15L), longTask.getResult());
     }
 }

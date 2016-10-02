@@ -1,21 +1,22 @@
 package com.company;
 
+import com.company.executor.Executor;
+import com.company.executor.ExecutorImpl;
+import com.company.task.LongTask;
+import com.company.task.Task;
+import com.company.validator.NumberValidator;
+
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.IdentityHashMap;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         List<Task<Integer>> intTasks = new ArrayList<Task<Integer>>();
-        intTasks.add(new LongTask(10L));
+        intTasks.add(new LongTask(-10L));
         intTasks.add(new LongTask(15L));
         intTasks.add(new LongTask(20L));
         intTasks.add(new LongTask(25L));
-        System.out.println("All tasks:");
-        for (Task task : intTasks) {
-            task.execute();
-        }
+
         test(intTasks);
     }
 
